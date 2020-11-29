@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         node.geometry?.firstMaterial?.diffuse.contents = UIColor .green
         //specifying location of the node in the scene
         node.position = SCNVector3Make(0,0,-0.2)
+        node.name = "box"
         //finally adding the newly created node to the main root node of the arscene
         sceneView.scene.rootNode.addChildNode(node)
     }
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
         node.geometry = SCNSphere(radius: 0.1)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor .darkGray
         node.position = SCNVector3Make(0.1,0.2,-0.4)
+        node.name = "sphere"
         sceneView.scene.rootNode.addChildNode(node)
     }
     func addCone(){
@@ -47,6 +49,7 @@ class ViewController: UIViewController {
         node.geometry = SCNCone(topRadius: 0.01, bottomRadius: 0.1, height: 0.2)
         node.geometry?.firstMaterial?.diffuse.contents = UIColor .orange
         node.position = SCNVector3Make(0.2,0.3,-0.5)
+        node.name = "cone"
         sceneView.scene.rootNode.addChildNode(node)
     }
     func removeAllNodes()  {
@@ -54,8 +57,14 @@ class ViewController: UIViewController {
             SCNNode.removeFromParentNode()
         }
     }
+    func removeSpecificNode(name:String)  {
+        if let node = sceneView.scene.rootNode.childNode(withName: name, recursively: false){
+            node.removeFromParentNode()
+        }
+    }
     @IBAction func removeClicked(_ sender: UIButton) {
-        removeAllNodes()
+//        removeAllNodes()
+        removeSpecificNode(name: "box")
     }
 }
 
