@@ -49,5 +49,13 @@ class ViewController: UIViewController {
         node.position = SCNVector3Make(0.2,0.3,-0.5)
         sceneView.scene.rootNode.addChildNode(node)
     }
+    func removeAllNodes()  {
+        sceneView.scene.rootNode.enumerateChildNodes { (SCNNode, _) in
+            SCNNode.removeFromParentNode()
+        }
+    }
+    @IBAction func removeClicked(_ sender: UIButton) {
+        removeAllNodes()
+    }
 }
 

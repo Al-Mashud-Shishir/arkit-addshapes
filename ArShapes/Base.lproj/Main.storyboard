@@ -19,14 +19,30 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBo-Lx-Z1j">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtP-t3-NHv">
+                                <rect key="frame" x="172" y="772" width="70" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="T10-NJ-C6E"/>
+                                    <constraint firstAttribute="height" constant="50" id="XjQ-oz-oxG"/>
+                                </constraints>
+                                <state key="normal" title="Remove">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j5M-Xv-rdM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QtP-t3-NHv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EnV-yX-De6"/>
                             <constraint firstAttribute="bottom" secondItem="WBo-Lx-Z1j" secondAttribute="bottom" id="M6F-GN-ldv"/>
                             <constraint firstItem="WBo-Lx-Z1j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U6E-CB-Hwq"/>
                             <constraint firstAttribute="trailing" secondItem="WBo-Lx-Z1j" secondAttribute="trailing" id="YU4-H4-4YE"/>
                             <constraint firstItem="WBo-Lx-Z1j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ipl-9Z-Lsh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QtP-t3-NHv" secondAttribute="bottom" constant="40" id="sVD-ne-Rah"/>
                         </constraints>
                     </view>
                     <connections>
