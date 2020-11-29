@@ -52,19 +52,8 @@ class ViewController: UIViewController {
         node.name = "cone"
         sceneView.scene.rootNode.addChildNode(node)
     }
-    func removeAllNodes()  {
-        sceneView.scene.rootNode.enumerateChildNodes { (SCNNode, _) in
-            SCNNode.removeFromParentNode()
-        }
-    }
-    func removeSpecificNode(name:String)  {
-        if let node = sceneView.scene.rootNode.childNode(withName: name, recursively: false){
-            node.removeFromParentNode()
-        }
-    }
-    @IBAction func removeClicked(_ sender: UIButton) {
-//        removeAllNodes()
-        removeSpecificNode(name: "box")
+    @IBAction func lightClicked(_ sender: UIButton) {
+        sceneView.autoenablesDefaultLighting = true
     }
 }
 
