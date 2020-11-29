@@ -52,8 +52,21 @@ class ViewController: UIViewController {
         node.name = "cone"
         sceneView.scene.rootNode.addChildNode(node)
     }
+    func addSpotLight() {
+        let spotLight = SCNLight()
+        spotLight.type = .spot
+        spotLight.spotInnerAngle = 45
+        spotLight.spotOuterAngle = 45
+        spotLight.intensity = 500
+        
+        let node = SCNNode()
+        node.light = spotLight
+        node.position = SCNVector3(0,0,1)
+        sceneView.scene.rootNode.addChildNode(node)
+    }
     @IBAction func lightClicked(_ sender: UIButton) {
-        sceneView.autoenablesDefaultLighting = true
+//        sceneView.autoenablesDefaultLighting = true
+        addSpotLight()
     }
 }
 
